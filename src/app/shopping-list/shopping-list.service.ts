@@ -6,8 +6,9 @@ export class ShoppingListService{
     public ingredientsChanged = new Subject<Ingredient[]>();
     startedEditing = new Subject<number>();
 
-    private ingredients :Ingredient[] = [new Ingredient('eggs' , 3)
-                                        ,new Ingredient('flower' , 1)];
+    private ingredients :Ingredient[] = [
+        // new Ingredient('eggs' , 3),new Ingredient('flower' , 1)
+                                    ];
 
     getIngredients(){
         return this.ingredients.slice();
