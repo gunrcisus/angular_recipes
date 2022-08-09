@@ -22,11 +22,11 @@ export class DataStorageService {
         this.http.get<Recipe[]>('https://angular-learn-da763-default-rtdb.europe-west1.firebasedatabase.app/recipes.json')
             .pipe(map(recipes => {
               return recipes.map(recipe => {
-                return {...recipe , ingredients: recipe.ingredients ? recipe.ingredients : []};
-              })  
+                    return {...recipe , ingredients: recipe.ingredients ? recipe.ingredients : []};
+                })  
             }))
             .subscribe(recipes => {
-            this.recipeService.setRecipes(recipes);
+                this.recipeService.setRecipes(recipes);
         });
     }
 }
