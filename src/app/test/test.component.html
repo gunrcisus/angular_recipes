@@ -1,0 +1,10 @@
+<!-- <mat-tab-group animationDuration="0ms"> -->
+    <mat-tab-group mat-stretch-tabs dynamicHeight >
+    <div *ngFor="let appName of applicationNames">
+        <mat-tab [label]="appName">
+            <app-config-inputs (formVaildationEvent)="setFormValid($event)" [appName]="appName"></app-config-inputs>
+        </mat-tab>
+    </div>
+   
+</mat-tab-group>
+<input form="confForm" type="submit" value="Save" [disabled]="!formValid" class="btn btn-success">
